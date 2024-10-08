@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection Campaign</title>
+    <style>
+        /* General Styles */
+        body {
+            background-image: url('https://i.pinimg.com/originals/00/34/2e/00342ea23cf20749d80b030b1bebe3b7.gif');
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensure the image covers the full screen */
+            background-attachment: fixed; /* Fix the background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Arial', sans-serif;
+            color: #39ff14; /* Neon green text */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            text-align: center;
+            background-color: rgba(46, 46, 46, 0.9); /* Semi-transparent grey box model */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6);
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #39ff14; /* Neon green */
+            font-weight: bold;
+        }
+
+        p {
+            margin: 20px 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+            background-color: rgba(59, 59, 59, 0.9); /* Semi-transparent dark greyish box model for text */
+            border-radius: 8px;
+            border: 1px solid #444;
+            color: #39ff14; /* Neon green text */
+        }
+
+        .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #39ff14; /* Neon green button */
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #33cc11; /* Darker neon green on hover */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Add some margin and box model */
+        .container p {
+            margin-bottom: 15px;
+            padding: 20px;
+            border: 1px solid #444;
+            background-color: rgba(59, 59, 59, 0.9); /* Semi-transparent dark grey */
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reflection Paper</h1>
+        
+        <!-- Page 1 Content -->
+        <div id="page1">
+            <p id="para1">I am truly amazed by the production team behind this event. Saying I’m impressed is an understatement. Although the presentation started a bit slow, my favorite part was the Q&A session. It was during this segment, when I stood up to answer the speaker's question, that I truly grasped the importance of cyber awareness and data privacy. We learned about the numerous laws related to data privacy, why they exist, and how they protect us from hackers, cybercriminals, and data thieves. These laws are essential in shielding users from those who attempt to exploit or steal data. Typically, these cybercriminals face prison sentences of six years or more, depending on the severity of their actions.</p>
+            <p id="para2">What struck me most about the speaker was his delivery. His clear and engaging style kept me hooked throughout the session. He emphasized how dangerous the internet can be, particularly with people lurking in the shadows, waiting to cause harm. However, he also reassured us that there are preventive measures we can take to avoid trouble. He stressed the role of cyber governance, highlighting that cyber authorities are there to protect us, help retrieve lost data, and spread awareness about the potential dangers we face online. The devices we use every day to access the internet, such as our phones and computers, are gateways to both opportunity and risk, and it's our responsibility to be aware of that.</p>
+        </div>
+
+        <!-- Page 2 Content -->
+        <div id="page2" class="hidden">
+            <p id="para3">I thoroughly enjoyed the campaign from beginning to end. The team effectively taught us how to be responsible when using our devices to access the internet. The atmosphere was light-hearted at times, which made the learning process even more enjoyable. One of the key takeaways for me was realizing that even if a hacker operates from a different country, their actions can have a global impact. For example, if they steal data or hack into a company's database, the repercussions aren’t confined to the company or the affected individuals – it can lead to far-reaching consequences that touch people across the globe.</p>
+            <p id="para4">Despite how much I enjoyed the event, there were a few aspects I found challenging. At times, I struggled to follow the slides projected during the presentation. They weren't always clear, and I had to rely on social cues from the speaker to fully understand the content. Additionally, some of the announcements made during the event were a bit confusing. However, these were minor inconveniences, and they didn’t detract much from my overall experience.</p>
+        </div>
+
+        <!-- Page 3 Content -->
+        <div id="page3" class="hidden">
+            <p id="para5">I've always been intrigued by topics related to cyber awareness, so I’m really glad I attended the event. I made sure to arrive early to hear the speaker, and I was impressed by his professionalism and depth of experience. I hope that one day I can reach that same level of knowledge and confidence. He even reminded me of the officers from the College of Criminology, whom I used to admire before realizing I was better suited for BSIT-GD. Hahaha!</p>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="buttons">
+            <button id="prevBtn" onclick="prevPage()" class="hidden">Previous</button>
+            <button id="nextBtn" onclick="nextPage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+
+        function showPage(page) {
+            // Hide all pages
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('page3').classList.add('hidden');
+            
+            // Show the requested page
+            document.getElementById('page' + page).classList.remove('hidden');
+            
+            // Adjust button visibility
+            document.getElementById('prevBtn').classList.toggle('hidden', page === 1);
+            document.getElementById('nextBtn').classList.toggle('hidden', page === 3);
+        }
+
+        function nextPage() {
+            if (currentPage < 3) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+    </script>
+</body>
+</html>
